@@ -21,5 +21,3 @@ img = img.reshape(28, 28)
 #이미지를 표시할 때 원래 형상인 28*28크기로 다시 변형해야
 print(img.shape)
 img_show(img)
-
-(x_train, t_train), (x_test, t_test) = load_mnist(flatten=True, normalize=False)

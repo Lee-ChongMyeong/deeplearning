@@ -1,3 +1,5 @@
+import sys, os
+sys.path.append(os.pardir) 
 import numpy as np
 import pickle
 from dataset.mnist import load_mnist
@@ -20,7 +22,7 @@ def get_data():
 def init_network():
     #sample_weight.pkl파일에 저장된 학습된 가중치 매개변수를 읽는다
     #가중치와 편향 매개변수가 딕셔너리 변수로 저장되어 있다.
-    with open("sample_weight.pkl", 'rb') as f:
+    with open("/Users/이총령/Desktop/deepLearning/deeplearning/deepLearning/chapter3/chapter3_6/sample_weight.pkl", 'rb') as f:
         network = pickle.load(f)
 
     return network
@@ -42,6 +44,7 @@ def predict(network, x):
 #신경망의 정확도(분류가 얼마나 올바른가)를 평가
 x, t = get_data()
 network = init_network()
+print('network', network)
 
 accuracy_cnt = 0
 for i in range(len(x)):
