@@ -2,9 +2,9 @@ import numpy as np
 import matplotlib.pylab as plt
 
 
-def numercial_diff(f, x):
-    h = 10e-50
-    return (f(x + h) - f(x)) / h
+def numercial_diff(f,x):
+  h=1e-4
+  return (f(x+h)-f(x-h))/(2*h)
 
 # 수치미분의 예
 def function_1(x):
